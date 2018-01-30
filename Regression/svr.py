@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 # Importing the dataset
-dataset = pd.read_csv('Position_Salaries.csv')
+dataset = pd.read_csv('C:\\Users\\Pulkit\\Desktop\\machine\\data\\Position_Salaries.csv')
 X = dataset.iloc[:, 1:2].values
 y = dataset.iloc[:, 2].values
 
@@ -18,6 +18,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, rando
 from sklearn.preprocessing import StandardScaler
 sc_X = StandardScaler()
 sc_y = StandardScaler()
+y = np.array(y).reshape(-1,1)
 X = sc_X.fit_transform(X)
 y = sc_y.fit_transform(y)
 
