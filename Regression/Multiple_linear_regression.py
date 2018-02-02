@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 # Importing the dataset
-dataset = pd.read_csv('C:\\Users\\Pulkit\\Desktop\\machine\\data\\50_Startups.csv')
+dataset = pd.read_csv('50_Startups.csv')
 X = dataset.iloc[:, :-1].values
 y = dataset.iloc[:, 4].values
 
@@ -46,3 +46,7 @@ regressor.fit(X_train, y_train)
 
 # Predicting the Test set results
 y_pred = regressor.predict(X_test)
+
+#Building the optimal modelusind Backward Elimination
+import statsmodels.formula.api as sm
+X=np.append(arr=np.ones((50,1)).astype(int),values=X,axis=1)
